@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire"
+github "SwiftyJSON/SwiftyJSON"
+github "aws/aws-sdk-ios"
+github "Alamofire/AlamofireImage"
+github "MailOnline/ImageViewer"
