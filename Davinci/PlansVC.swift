@@ -80,7 +80,7 @@ class PlansVC: UIViewController , UITableViewDataSource, UITableViewDelegate, Ba
     
     // Cell が選択された場合
     func tableView(_ table: UITableView, didSelectRowAt indexPath:IndexPath) {
-        selectedPlan = imgArray[indexPath.row] as! String
+        selectedPlan = imgArray[indexPath.row] as? String
         // 製作教室が選択された場合
         if(selectedPlan != nil){
             if(selectedPlan == "こども製作教室"){

@@ -57,8 +57,8 @@ class BeaconPlaces{
         if json != nil {
             // 検知したビーコンに合わせて適切なJsonを返す
             json.forEach { (_, json) in
-                if(json["major"].int == Int(beacon.major)){
-                    if(json["minor"].int == Int(beacon.minor)){
+                if(json["major"].int == Int(truncating: beacon.major)){
+                    if(json["minor"].int == Int(truncating: beacon.minor)){
                          print("ビーコン情報と取得値が一致しました")
                         beaconPlaceJson = json
                     }

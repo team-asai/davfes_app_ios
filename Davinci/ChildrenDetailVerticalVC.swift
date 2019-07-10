@@ -98,7 +98,7 @@ class ChildrenDetailVerticalVC: UIViewController{
             displayHeight = self.view.frame.height
         }
         
-        scrollView.contentInset = UIEdgeInsetsMake(-(navigationBarHeight + barHeight), 0, (navigationBarHeight + barHeight), 0)
+        scrollView.contentInset = UIEdgeInsets(top: -(navigationBarHeight + barHeight), left: 0, bottom: (navigationBarHeight + barHeight), right: 0)
         
         // プランIDの画像
         if(plans.ids[selectedSectionId] < 10){
@@ -210,7 +210,7 @@ class ChildrenDetailVerticalVC: UIViewController{
     }
     
     // いいねイメージタップ時
-    func tapFavoriteImage(_ sender: UIGestureRecognizer) {
+    @objc func tapFavoriteImage(_ sender: UIGestureRecognizer) {
         print("タップ")
 
         if(ud.object(forKey: String(plans.ids[(sender.view?.tag)!])) as! Bool == false){
@@ -239,7 +239,7 @@ class ChildrenDetailVerticalVC: UIViewController{
         print("hoge")
         guard let displacedView = sender.view as? UIImageView else { return }
         
-        guard let displacedViewIndex = items.index(where: { $0.imageView == displacedView }) else { return }
+        guard let displacedViewIndex = items.firstIndex(where: { $0.imageView == displacedView }) else { return }
         
         let frame = CGRect(x: 0, y: 0, width: 200, height: 24)
         let headerView = CounterView(frame: frame, currentIndex: displacedViewIndex, count: items.count)
@@ -284,7 +284,7 @@ class ChildrenDetailVerticalVC: UIViewController{
             GalleryConfigurationItem.overlayColor(UIColor(white: 0.035, alpha: 1)),
             GalleryConfigurationItem.overlayColorOpacity(1),
             GalleryConfigurationItem.overlayBlurOpacity(1),
-            GalleryConfigurationItem.overlayBlurStyle(UIBlurEffectStyle.light),
+            GalleryConfigurationItem.overlayBlurStyle(UIBlurEffect.Style.light),
             
             GalleryConfigurationItem.videoControlsColor(.white),
             

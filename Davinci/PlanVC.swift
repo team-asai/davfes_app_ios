@@ -88,7 +88,7 @@ class PlanVC:UIViewController , UITableViewDataSource, UITableViewDelegate, Http
         
         // 手動でテーブルビューのインセットを調整
         self.automaticallyAdjustsScrollViewInsets = false
-        self.tableView.contentInset = UIEdgeInsetsMake((navigationBarHeight + barHeight), 0, 0, 0)
+        self.tableView.contentInset = UIEdgeInsets(top: (navigationBarHeight + barHeight), left: 0, bottom: 0, right: 0)
         
         // 下部の余分なセパレータを消す
         tableView.tableFooterView = UIView(frame: .zero)
@@ -123,7 +123,7 @@ class PlanVC:UIViewController , UITableViewDataSource, UITableViewDelegate, Http
     }
     
     // セクションヘッダータップ時
-    func tapSectionHeader(_ sender: UIGestureRecognizer) {
+    @objc func tapSectionHeader(_ sender: UIGestureRecognizer) {
         if(Double(sender.location(in: sender.view).x) > Double(0.85*displayWidth) && Double(sender.location(in: sender.view).y) > Double(0.5*ratio*displayHeight)){
             print("お気に入り")
 
@@ -297,12 +297,12 @@ class PlanVC:UIViewController , UITableViewDataSource, UITableViewDelegate, Http
     // スクロール時，セクションタイトルを上に残さないようにするため
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if(scrollView.contentOffset.y <= (self.sectionHeaderHeight) && scrollView.contentOffset.y >= 0){
-            scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0)
+            scrollView.contentInset = UIEdgeInsets(top: -scrollView.contentOffset.y, left: 0, bottom: 0, right: 0)
             
             print(scrollView.contentOffset.y)
         }else if(scrollView.contentOffset.y >= (self.sectionHeaderHeight)){
-            scrollView.contentInset = UIEdgeInsetsMake(-self.sectionHeaderHeight, 0, 0, 0)        }else{
-            self.tableView.contentInset = UIEdgeInsetsMake((navigationBarHeight + barHeight), 0, 0, 0)
+            scrollView.contentInset = UIEdgeInsets(top: -self.sectionHeaderHeight, left: 0, bottom: 0, right: 0)        }else{
+            self.tableView.contentInset = UIEdgeInsets(top: (navigationBarHeight + barHeight), left: 0, bottom: 0, right: 0)
         }
     }
     

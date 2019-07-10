@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // 製品用Arn
     let platformApplicationArnProd = "arn:aws:sns:us-east-1:249774220252:app/APNS/Davinci"
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         print("applicationDidFinishLaunching")
         let credentialsProvider = AWSCognitoCredentialsProvider(

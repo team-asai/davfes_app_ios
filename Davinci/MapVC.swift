@@ -150,6 +150,8 @@ class MapVC: UIViewController, UIScrollViewDelegate{
         case CLProximity.immediate:
             proximity = "Immediate"
             break
+        @unknown default:
+            break
         }
         
         label3.text = "現在地を取得しました!!"

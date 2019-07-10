@@ -21,7 +21,7 @@ class RootVC: UIViewController {
         let ud = UserDefaults.standard
         
         // サーバーの名前をudで保存しておく、ここ1箇所変更すればOK
-        let serverName = "http://ik1-307-13856.vs.sakura.ne.jp/"
+        let serverName = "http://mini.puc.pu-toyama.ac.jp/davfes_app/"
         ud.set(serverName, forKey: "serverName")
         
         // ビーコンのモニタリング開始

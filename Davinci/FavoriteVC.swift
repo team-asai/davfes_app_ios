@@ -99,7 +99,7 @@ class FavoriteVC:UIViewController , UITableViewDataSource, UITableViewDelegate, 
         
         // 手動でテーブルビューのインセットを調整
         self.automaticallyAdjustsScrollViewInsets = false
-        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     // 端末サイズに合わせて，大きさを変更してくれる(Widthを基準に大きさ調整)
@@ -299,14 +299,14 @@ class FavoriteVC:UIViewController , UITableViewDataSource, UITableViewDelegate, 
     // スクロール時，セクションタイトルを上に残さないようにするため
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if(scrollView.contentOffset.y <= (self.sectionHeaderHeight) && scrollView.contentOffset.y >= 0){
-            scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0)
+            scrollView.contentInset = UIEdgeInsets(top: -scrollView.contentOffset.y, left: 0, bottom: 0, right: 0)
             
             print(scrollView.contentOffset.y)
         }else if(scrollView.contentOffset.y >= (self.sectionHeaderHeight)){
-            scrollView.contentInset = UIEdgeInsetsMake(-self.sectionHeaderHeight, 0, 0, 0)
+            scrollView.contentInset = UIEdgeInsets(top: -self.sectionHeaderHeight, left: 0, bottom: 0, right: 0)
             print("else if")
         }else{
-            self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+            self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
     }
     

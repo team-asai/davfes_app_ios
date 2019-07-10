@@ -51,7 +51,7 @@ class PlanManager{
     
     // 初期化時に指定された企画名の企画を取得
     func HttpGet() {
-        print("企画情報取得開始 : \(planName)")
+        print("企画情報取得開始 : \(String(describing: planName))")
         
         //--------------------------ここからHTTP通信でJSON読み込み--------------------------
         
@@ -101,7 +101,7 @@ class PlanManager{
     // お気にいりされているものだけ取得
     func HttpGetWithOnlyFavoritePlans(){
         
-        print("お気に入り企画情報取得開始 : \(planName)")
+        print("お気に入り企画情報取得開始 : \(String(describing: planName))")
         
         //--------------------------ここからHTTP通信でJSON読み込み--------------------------
         Alamofire.request(urls[planName]!)

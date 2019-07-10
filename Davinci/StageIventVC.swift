@@ -58,7 +58,7 @@ class StageIventVC: UIViewController, UIScrollViewDelegate{
         self.myScrollView.isScrollEnabled = true
         self.myScrollView.showsHorizontalScrollIndicator = true
         self.myScrollView.showsVerticalScrollIndicator = true
-        self.myScrollView.contentInset = UIEdgeInsetsMake(-(navigationBarHeight + barHeight), 0, (navigationBarHeight + barHeight), 0)
+        self.myScrollView.contentInset = UIEdgeInsets(top: -(navigationBarHeight + barHeight), left: 0, bottom: (navigationBarHeight + barHeight), right: 0)
 //        if #available(iOS 11.0, *) {
 //            self.myScrollView.contentInsetAdjustmentBehavior = .never
 //        } else {
@@ -95,8 +95,8 @@ class StageIventVC: UIViewController, UIScrollViewDelegate{
         return self.noBarView
     }
     
-    // ダブルタップ
-    func doubleTap(_ gesture: UITapGestureRecognizer) -> Void {
+    // ダ@objc ブルタップ
+    @objc func doubleTap(_ gesture: UITapGestureRecognizer) -> Void {
         
         print(self.myScrollView.zoomScale)
         if ( self.myScrollView.zoomScale < self.myScrollView.maximumZoomScale ) {

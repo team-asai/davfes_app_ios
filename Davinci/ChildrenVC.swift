@@ -95,7 +95,7 @@ class ChildrenVC:UIViewController , UITableViewDataSource, UITableViewDelegate, 
         }else{
             print("Normal")
             selectedSectionId = sender.view?.tag
-            print(selectedSectionId)
+            print(selectedSectionId!)
             performSegue(withIdentifier: "toChildrenDetailVerticalViewController", sender: nil)
         }
     }

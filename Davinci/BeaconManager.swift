@@ -121,6 +121,8 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
 //            print("authorizedWhenInUse")
             startMyMonitoring()
             break
+        @unknown default:
+            break
         }
     }
     
@@ -211,6 +213,8 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
                 case CLProximity.immediate:
 //                    print("Proximity: Immediate");
                     proximity = "Immediate"
+                    break
+                @unknown default:
                     break
                 }
                 beaconUuids.add(beaconUUID.uuidString)
